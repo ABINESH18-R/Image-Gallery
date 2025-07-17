@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width , initial-scale=1.0">
+        <title>Image Slider</title>
+        <link rel="icon" href="images.png">
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+        <header>
+            <h1>Image Gallery</h1>
+        </header>
+        <main>
+            <div class="bar" ondblclick="handleBar()" onclick="closeBar()">
+                <svg xmlns="http://www.w3.org/2000/svg" height="40px" viewBox="0 -960 960 960" id="ham-bar" width="40px" fill="#CCCCCC"><path d="M113.3-230.2v-75.91h733.56v75.91H113.3Zm0-211.92v-75.76h733.56v75.76H113.3Zm0-211.77v-75.91h733.56v75.91H113.3Z"/></svg>
+            </div>
+            <div class="ham-back">
+                <h2>Home</h2>
+                <ul>
+                    <li onclick="showAll('All')">All</li>
+                    <li onclick="filterCities('city')">City</li>
+                    <li onclick="filterCinema('cinema')">Cinema</li>
+                    <li onclick="filterFood('food')">Food</li>
+                </ul>
+            </div>
+            <div class="gallery" data-category="All">
+                <img src="cities.jpg" alt="cities" width="250px" height="200" data-category="city">
+                <img src="cities1.jpg" alt="cities" width="250px" height="200" data-category="city">
+                <img src="cities2.jpg" alt="cities" width="250px" height="200" data-category="city">
+                <img src="cinema.jpg" alt="cinema" width="250px" height="200" data-category="cinema">
+                <img src="cinema1.jpg" alt="cinema" width="250px" height="200" data-category="cinema">
+                <img src="foods3.jpg" alt="food" width="250px" height="200" data-category="food">
+                <img src="foods1.jpg" alt="food" width="250px" height="200" data-category="food">
+                <img src="foods2.jpg" alt="food" width="250px" height="200" data-category="food">
+            </div>
+            <div class="btn-click">
+                <button class="btn-left" type="button" ><svg xmlns="http://www.w3.org/2000/svg" height="30px" viewBox="0 -960 960 960" width="30px" fill="#CCCCCC"><path d="M452.04-235.26 206.3-481l245.74-245.74L499.78-679 301.54-481l198.24 198-47.74 47.74Zm255.16 0L461.46-481 707.2-726.74 754.93-679l-198 198 198 198-47.73 47.74Z"/></svg>
+               </button>
+                <button class="btn-right" type="button"><svg xmlns="http://www.w3.org/2000/svg" height="30px" viewBox="0 -960 960 960" width="30px" fill="#CCCCCC"><path d="m373.91-480-183-184 63.66-63.65L502.22-480 254.57-232.35 190.91-296l183-184Zm267.11 0L457.78-664l63.65-63.65L769.09-480 521.43-232.35 457.78-296l183.24-184Z"/></svg></button>
+            </div>
+            <div class="lightbox-gallery"></div>
+                <svg xmlns="http://www.w3.org/2000/svg" height="40px" id="svg"viewBox="0 -960 960 960" width="40px" fill="#000000"><path d="M249-201.26 201.26-249l231-231-231-231L249-758.74l231 231 231-231L758.74-711l-231 231 231 231L711-201.26l-231-231-231 231Z"/></svg>
+            <div class="filter">
+                <button class="food" onclick="showAll('All')">All</button>
+                <button class="cities" onclick="filterCities('city')">Cities</button>
+                <button class="cinema" onclick="filterCinema('cinema')">Cinema</button>
+                <button class="food" onclick="filterFood('food')">Foods</button>
+            </div>
+        </main>
+        <script src="script.js">
+        </script>
+    </body>
+</html>
