@@ -1,0 +1,314 @@
+
+/* Reset */
+*{
+    margin:0px;
+    padding:0px;
+    box-sizing: border-box;
+}
+:root{
+    --BL:black;
+    --WT:white;
+}
+/* Style the Body Content */
+body{
+    width:100%;
+    height: 100vh;
+    background-image: linear-gradient(rgb(0, 0, 0),rgb(175, 4, 4));
+    position: relative;
+}
+header{
+    text-align: center;
+    font-size: 30px;
+    color: var(--WT);
+    text-shadow: 5px 5px 10px var(--BL);
+}
+.gallery{
+    margin:8% 0px 0px 10%;
+    width:75%;
+    display:flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+.gallery img{
+    margin:20px 0px 20px 0px;
+    border: 2px solid transparent;
+    border-radius: 10px;
+    cursor: zoom-in;
+    display:inline;
+    box-shadow: 5px 5px 10px var(--BL);
+
+}
+#svg{
+    position:absolute;
+    top:10px;
+    right:20px;
+    color:var(--BL);
+    cursor: pointer;
+    background-color: rgba(255, 255, 255, 0.803);
+    border: 2px solid transparent;
+    border-radius: 10px;
+    display: none;
+    z-index: 999;
+}
+.btn-left{
+    font-size: 15px;
+    background-color: var(--BL);
+    position: absolute;
+    top:40%;
+    left:33%;
+    padding:5px 10px;
+    cursor: pointer;
+    border: 1px solid transparent;
+    border-radius: 10px;
+    display:none;
+    z-index: 2000;
+    background-color: var(--BL);
+    color: var(--WT);
+    width:50px;
+    height: 40px;
+}
+.btn-right{
+    font-size: 15px;
+    position: absolute;
+    top:40%;
+    right:34%;
+    padding:5px 10px;
+    cursor: pointer;
+    border: 1px solid transparent;
+    border-radius: 10px;
+    display:none;
+    z-index: 2000;
+    background-color: var(--BL);
+    color: var(--WT);
+    width:50px;
+    height: 40px;
+}
+button:hover{
+    border: 1px solid var(--WT);
+}
+button:active{
+    border: 2px double var(--WT);
+}
+.lightbox-gallery{
+    position: absolute;
+    top: 0%;
+    width:100%;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.792);
+    display:none;
+    z-index: 999;
+}
+ body #new-img{
+        width:450px;
+        height:300px;
+        position: absolute;
+        top: 25%;
+        left: 35%;
+        z-index: 1000;
+        border:5px double var(--WT);
+        border-radius: 5px;
+}
+.gallery img:hover{
+     transform: scale(1.02);
+     transition: transform 0.3s ease, border-color 0.3s ease;
+}
+#svg:active{
+     border :2px solid var(--BL);
+}
+/* Style the Light Box Image */
+body #prev-image{
+          width:450px;
+        height:300px;
+        position: absolute;
+        top: 45%;
+        left: 35%;
+        z-index: 1000;
+        border:5px double var(--WT);
+        border-radius: 5px;
+}
+.filter button{
+  display: flex;
+  align-items: center;
+  justify-content: center;      
+  padding: 10px;
+  cursor: pointer;
+  border: 1px solid transparent;
+  border-radius: 10px;
+  outline: 0;
+  color:var(--BL);
+  font-size: 15px;
+  font-weight: 600;
+  width: 60px;
+  height: 40px;
+  background-color: rgb(187, 148, 87);
+  border-bottom:2px solid rgba(255, 0, 166, 0.636);
+  border-right: 2px solid rgba(255, 0, 0, 0.492);
+}
+.filter button:hover{
+     transform: scale(1.02);
+     transition: transform 2s ease, border-color 0.3s ease;
+}
+.filter {
+    position: absolute;
+    top: 15%;
+    display: flex;
+    width: 100%;
+    justify-content: space-evenly;
+    align-items: center;
+}
+#ham-bar{
+    display: none;
+}
+.ham-back{
+    background-color: rgba(227, 220, 149, 0.69);
+    width:350px;
+    height:100vh;
+    padding: 10px;
+    font-size: 30px;
+    border-radius: 10px;
+    display: none;
+}
+.ham-back ul{
+    margin-top: 20px;
+    line-height: 2em;
+}
+.ham-back ul li:hover{
+    padding: 6px 0px 0px 5px;
+    border-radius: 10px;
+    background-color: rgba(255, 235, 205, 0.542);
+    cursor: pointer;
+    font-weight: 600;
+}
+/* Media Query */
+@media screen  and (max-width:360px)
+{
+    body
+       {
+         width: 100%;
+         height: 100vh;
+         background-image: linear-gradient(rgb(0, 0, 0),rgb(175, 4, 4),black);
+         position: relative;
+       }
+   header
+      {
+         text-align: center;
+         font-size: 17px;
+         color: var(--WT);
+         text-shadow: 2px 2px 5px var(--BL);
+        }
+   header h1
+       {
+         margin-top: 30px;
+        }
+   #ham-bar
+       {
+         display: block;
+        }
+   .gallery
+       {
+         position: absolute;
+         top:10%;
+         z-index: -500;
+         margin:5% 0px 0px 15%;
+         width:35%;
+         display:flex;
+         flex-direction: row;
+         flex-wrap: wrap;
+         justify-content: space-between;
+    }
+   .gallery img
+       {
+         margin:20px 0px 20px 0px;
+         border: 2px solid transparent;
+         border-radius: 10px;
+         cursor: zoom-in;
+         display:inline;
+         box-shadow: 5px 5px 10px var(--BL);
+         width: 250px;
+         height: 200px;
+        }
+  .lightbox-gallery
+       {
+         position: absolute;
+         top: 0%;
+         width:100%;
+         height: 280vh;
+         background-color: rgba(0, 0, 0, 0.792);
+         display:none;
+         z-index: 999;
+        }
+   body #new-img
+       {
+         width:300px;
+         height:250px;
+         position: absolute;
+         top: 40%;
+         left: 8%;
+         z-index: 1000;
+         border:5px double var(--WT);
+         border-radius: 13px;
+        }
+   button
+       {
+         display: flex;
+         align-items: center;
+         padding:3px 7px;
+         cursor: pointer;
+         border: 1px solid transparent;
+         border-radius: 14px;
+         outline: 0;
+         color: var(--WT);
+         width:42px;
+         height: 42px;
+         font-size: 15px;
+         background-image: linear-gradient(black,black);
+        }
+  .btn-left
+       {
+         position: absolute;
+         top:55%;
+         left:3%;
+         display:none;
+         z-index: 2000;
+         background-color: rgb(241, 255, 250);
+        }
+    .btn-right
+       {
+         position: absolute;
+         top:55%;
+         right:3%;
+         display:none;
+         z-index: 2000;
+        }
+    .gallery img:hover
+       {
+         transform: scale(1.02);
+         transition: transform 2s ease, border-color 0.3s ease;
+        }
+    .ham-back
+       {
+         transition:  2s ease, border-color 0.3s ease;
+         background-color: rgba(227, 220, 149, 0.69);
+         width:200px;
+         height:120vh;
+         padding: 10px;
+         font-size: 20px;
+         border-radius: 10px;
+         display: none;
+        }
+    .bar
+       {
+         position: relative;
+         position: absolute;
+         top:0%;
+        }
+
+    .filter button
+       {
+         display: none;
+        }
+};
+
+
+    
